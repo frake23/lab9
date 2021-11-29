@@ -1,0 +1,16 @@
+<h4>Сулейманов Дмитрий ИУ6-32Б</h4>
+<%= form_tag '/' do %>
+  <div class="mb-4">
+    <label for="arr" class="form-label">Последовательность чисел</label>
+    <input
+      id="arr"
+      name="arr"
+      type="text"
+      required
+      value="1 5 25 0 125 11 1 625 23"
+      class="form-control"
+    >
+  </div>
+
+  <button type="submit" class="btn btn-dark">Получить результат</button>
+<% end %>
