@@ -15,11 +15,10 @@ class HomeController < ApplicationController
 
   def find_distances
     @arr
-      .map { |i| po5?(i) ? i : 0 }
-      .reduce([0, []]) { |obj, i| i.zero? ? [obj[0] + 1, obj[1]] : [obj[0], obj[1].push([obj[0], i])] }[1]
-      .group_by { |i| i[0] }
-      .values
-      .map { |i| i.map { |j| j[1] } }
+      .map {|i| po5?(i) ? i : 0}
+      .slice_when {|i, j| po5?(i) != po5?(j)}
+      .to_a
+      .reject {|i| i.include? 0}
   end
 
   def po5?(num)
@@ -32,6 +31,4 @@ class HomeController < ApplicationController
     end
     true
   end
-
-  helper_method :find_distances, :po5?
 end
