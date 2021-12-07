@@ -5,6 +5,17 @@ Content-Type: application/json
   "arr": "1 2 3 4 5"
 }
 
+<> 2021-12-07T192401.200.xml
+
+###
+
+POST http://localhost:3000/calc.xml
+Content-Type: application/json
+
+{
+  "arr": "1 2 3 4 5"
+}
+
 <> 2021-12-07T150011.200.xml
 
 ###
