@@ -1,0 +1,6 @@
+POST http://localhost:3000/calc.xml
+Content-Type: application/json
+
+{
+  "arr": "1 2 3 4 5"
+}

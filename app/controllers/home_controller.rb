@@ -4,6 +4,7 @@ require 'sequence'
 
 # home controller
 class HomeController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def calc
     arr_str = params[:arr]
     if /^(-?\d+ ?)+$/.match? arr_str

@@ -1,0 +1,165 @@
+POST http://localhost:3000/calc.xml
+Content-Type: application/json
+
+{
+  "arr": "1 2 3 4 5"
+}
+
+<> 2021-12-07T150011.200.xml
+
+###
+
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "arr": "1 2 3 4 5"
+}
+
+<> 2021-12-07T145628.500.html
+
+###
+
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "arr": "1 2 3 4 5"
+}
+
+<> 2021-12-07T145558.500.html
+
+###
+
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "arr": "1 2 3 4 5"
+}
+
+<> 2021-12-07T145546.404.html
+
+###
+
+POST http://localhost:3000/calc
+Content-Type: application/json
+
+{
+  "arr": "1 2 3 4 5"
+}
+
+<> 2021-12-07T145541.500.html
+
+###
+
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "arr": "1 2 3 4 5"
+}
+
+<> 2021-12-07T145449.500.html
+
+###
+
+POST http://localhost:3000/calc.xml
+Content-Type: application/json
+
+{
+  "arr": "1 2 3 4 5"
+}
+
+<> 2021-12-07T145352.200.xml
+
+###
+
+POST http://localhost:3000/.xml
+Content-Type: application/json
+
+{
+  "arr": "1 2 3 4 5"
+}
+
+<> 2021-12-07T145339.404.html
+
+###
+
+POST http://localhost:3000/.xml
+Content-Type: application/json
+
+{
+  "arr": "1 2 3 4 5"
+}
+
+<> 2021-12-07T145311.404.html
+
+###
+
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "arr": "1 2 3 4 5"
+}
+
+<> 2021-12-07T145302.200.html
+
+###
+
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "arr": "1 2 3 4 5"
+}
+
+<> 2021-12-07T145258.200.html
+
+###
+
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "arr": "1 2 3 4 5"
+}
+
+<> 2021-12-07T145249.200.html
+
+###
+
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "arr": "1 2 3 4 5"
+}
+
+<> 2021-12-07T145127.422.html
+
+###
+
+POST http://localhost:3000
+Content-Type: application/json
+
+{
+  "arr": "1 2 3 4 5"
+}
+
+<> 2021-12-07T145034.422.html
+
+###
+
+POST http://localhost:3000/.xml
+Content-Type: application/json
+
+{
+  "arr": "1 2 3 4 5"
+}
+
+<> 2021-12-07T145016.404.html
+
+###
+
