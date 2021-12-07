@@ -1,7 +1,7 @@
 <h1>Результаты</h1>
 
-<% if @error %>
-  <h4 class="alert alert-danger"><%= @error %></h4>
+<% if flash[:alert] %>
+  <h4 class="alert alert-danger"><%= flash[:alert] %></h4>
 <% else %>
   <h3>Введенные данные</h3>
   <h4><%= @arr.join(' ') %></h4>
