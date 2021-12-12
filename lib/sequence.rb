@@ -1,10 +1,10 @@
 module Sequence
   def find_distances(arr)
     arr
-      .map {|i| po5?(i) ? i : 0}
-      .slice_when {|i, j| po5?(i) != po5?(j)}
+      .map { |i| po5?(i) ? i : 0 }
+      .slice_when { |i, j| po5?(i) != po5?(j) }
       .to_a
-      .reject {|i| i.include? 0}
+      .reject { |i| i.include? 0 }
   end
 
   def po5?(num)
@@ -21,3 +21,4 @@ module Sequence
   private :po5?
   module_function :find_distances, :po5?
 end
+

@@ -11,7 +11,7 @@ class HomeController < ApplicationController
       @distances = Sequence.find_distances @arr
       @max_distance = @distances.max { |a, b| a.length <=> b.length }
     else
-      @error = 'В строке могут быть только числа или пробелы / может быть не более одного пробела между числами'
+      flash.alert = 'В строке могут быть только числа или пробелы / может быть не более одного пробела между числами'
     end
   end
 end
