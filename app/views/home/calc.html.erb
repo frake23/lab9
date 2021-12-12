@@ -4,15 +4,15 @@
   <h4 class="alert alert-danger"><%= @error %></h4>
 <% else %>
   <h3>Введенные данные</h3>
-  <h4><%= @arr.join(' ') %></h4>
+  <h4 class="alert alert-primary"><%= @arr.join(' ') %></h4>
   <%if @distances.length == 0 %>
     <h3>Отрезков из степеней 5 нет</h3>
   <% else %>
     <h3>Отрезки</h3>
     <% @distances.each do |distance| %>
-      <h4><%= distance.join ' ' %></h4>
+      <h4 class="alert alert-primary"><%= distance.join ' ' %></h4>
     <% end %>
     <h3>Максимальный отрезок</h3>
-    <h4><%= @max_distance.join ' ' %></h4>
+    <h4 class="alert alert-primary"><%= @max_distance.join ' ' %></h4>
   <% end %>
 <% end %>
