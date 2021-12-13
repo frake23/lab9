@@ -4,6 +4,7 @@ require 'sequence'
 
 # home controller
 class HomeController < ApplicationController
+
   def calc
     arr_str = params[:arr]
     if /^(-?\d+ ?)+$/.match? arr_str

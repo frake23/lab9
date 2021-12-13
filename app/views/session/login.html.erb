@@ -1,0 +1,32 @@
+<div class="min-vh-100 d-flex justify-content-center align-items-center">
+  <%= form_tag '/login', style: 'width: 500px', class: 'rounded-2 shadow-lg p-4 d-flex flex-column' do %>
+    <h2>Войти</h2>
+    <div class="mb-4 d-flex flex-column">
+      <label for="username" class="form-label">Имя пользователя</label>
+      <input
+        id="username"
+        name="username"
+        type="text"
+        required
+        placeholder="Имя пользователя"
+        class="form-control"
+      >
+    </div>
+    <div class="mb-4 d-flex flex-column">
+      <label for="password" class="form-label">Пароль</label>
+      <input
+        id="password"
+        name="password"
+        type="password"
+        required
+        placeholder="Пароль"
+        class="form-control"
+      >
+    </div>
+    <% if flash[:alert] %>
+      <div class="alert alert-danger"><%= flash[:alert] %></div>
+    <% end %>
+    <button type="submit" class="btn btn-dark mb-2">Войти</button>
+    <small class="form-text text-muted">Нет аккаунта? <a href="/users/new">Зарегестрируйте!</a></small>
+  <% end %>
+</div>

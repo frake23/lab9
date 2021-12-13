@@ -1,31 +1,42 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
+  skip_before_action :require_login, only: [:new, :create]
 
   # GET /users or /users.json
   def index
-    @users = User.all
+    if current_user.admin?
+      @users = User.all
+    else
+      redirect_to '/403'
+    end
   end
 
   # GET /users/1 or /users/1.json
   def show
+    redirect_to_403_by_id
   end
 
   # GET /users/new
   def new
+    redirect_to current_user if logged_in?
+
     @user = User.new
   end
 
   # GET /users/1/edit
   def edit
+    redirect_to_403_by_id
   end
 
   # POST /users or /users.json
   def create
-    @user = User.new(user_params)
+    @user = User.new(register_params)
+    @user.role = 'user'
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: "User was successfully created." }
+        log_in @user
+        format.html { redirect_to '/' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -36,6 +47,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
+    redirect_to_403_by_id
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: "User was successfully updated." }
@@ -49,6 +61,7 @@ class UsersController < ApplicationController
 
   # DELETE /users/1 or /users/1.json
   def destroy
+    redirect_to_403_by_id
     @user.destroy
     respond_to do |format|
       format.html { redirect_to users_url, notice: "User was successfully destroyed." }
@@ -64,6 +77,14 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:email, :username, :password_digest)
+      params.required(:user).permit(:username, :email, :password)
+    end
+
+    def register_params
+      params.permit(:username, :email, :password, :password_confirmation)
+    end
+
+    def redirect_to_403_by_id
+      redirect_to '/403' unless current_user.id == @user.id || current_user.admin?
     end
 end
