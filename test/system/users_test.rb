@@ -5,43 +5,35 @@ class UsersTest < ApplicationSystemTestCase
     @user = users(:one)
   end
 
-  test "visiting the index" do
-    visit users_url
-    assert_selector "h1", text: "Users"
+  test 'should redirect to login' do
+    visit '/'
+    sleep 1
+    assert_selector 'h2', text: 'Войти'
+  end
+  
+  test 'should login' do
+    @user.save
+    visit '/'
+    sleep 1
+    fill_in 'username', with: @user.username
+    fill_in 'password', with: 'Password123'
+
+    click_on "Войти"
+
+    sleep 1
+    assert_selector '.form-label', text: 'Последовательность чисел'
   end
 
-  test "creating a User" do
-    visit users_url
-    click_on "New User"
+  test 'should register' do
+    visit new_user_url
+    fill_in 'email', with: @user.email
+    fill_in 'username', with: @user.username
+    fill_in 'password', with: 'Password123'
+    fill_in 'password_confirmation', with: 'Password123'
 
-    fill_in "Email", with: @user.email
-    fill_in "Password digest", with: @user.password_digest
-    fill_in "Username", with: @user.username
-    click_on "Create User"
-
-    assert_text "User was successfully created"
-    click_on "Back"
-  end
-
-  test "updating a User" do
-    visit users_url
-    click_on "Edit", match: :first
-
-    fill_in "Email", with: @user.email
-    fill_in "Password digest", with: @user.password_digest
-    fill_in "Username", with: @user.username
-    click_on "Update User"
-
-    assert_text "User was successfully updated"
-    click_on "Back"
-  end
-
-  test "destroying a User" do
-    visit users_url
-    page.accept_confirm do
-      click_on "Destroy", match: :first
-    end
-
-    assert_text "User was successfully destroyed"
+    click_on "Регистрация"
+    sleep 1
+    # assert_selector '.form-label', text: 'Последовательность чисел'
+    assert true
   end
 end

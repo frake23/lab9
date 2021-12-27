@@ -2,7 +2,7 @@
   <%= form_tag '/users', style: 'width: 500px', class: 'rounded-2 shadow-lg p-4 d-flex flex-column' do %>
     <h2>Зарегестрироваться</h2>
     <div class="mb-4 d-flex flex-column">
-      <label for="email" class="form-label">Email</label>
+      <label for="email" class="form-label">Почта</label>
       <input
         id="email"
         name="email"
@@ -52,7 +52,7 @@
         <% end %>
       </div>
     <% end %>
-    <button type="submit" class="btn btn-dark mb-2">Войти</button>
+    <button type="submit" class="btn btn-dark mb-2">Регистрация</button>
     <small class="form-text text-muted">Есть аккаунт? <a href="/login">Войдите!</a></small>
   <% end %>
 </div>
